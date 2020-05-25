@@ -1,0 +1,20 @@
+hunganh@Hungs-MacBook-Pro devops-docker-2020 % docker run -d -it --name website ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+5ff55952ae40a44f2caeefd3dd6ba94331fcb6fbf41b0cc7232ac0f9f21ba207
+hunganh@Hungs-MacBook-Pro devops-docker-2020 % docker exec website sh -c 'apt-get update && apt-get -y install curl'
+Get:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+.
+.
+.
+.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+hunganh@Hungs-MacBook-Pro devops-docker-2020 % docker attach website
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>

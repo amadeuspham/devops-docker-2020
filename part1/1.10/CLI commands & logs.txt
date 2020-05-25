@@ -1,0 +1,15 @@
+hunganh@Hungs-MacBook-Pro 1.10 % docker build -t fivethousand .
+Sending build context to Docker daemon  914.4kB
+.
+.
+.
+Successfully built 5dad0a1cc8f0
+Successfully tagged fivethousand:latest
+hunganh@Hungs-MacBook-Pro 1.10 % docker run --rm -p 5000:5000 fivethousand
+
+> frontend-example-docker@1.0.0 start /usr/src/app
+> webpack --mode production && serve -s -l 5000 dist
+.
+.
+.
+INFO: Accepting connections at http://localhost:5000
