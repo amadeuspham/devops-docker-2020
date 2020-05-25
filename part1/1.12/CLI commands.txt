@@ -1,0 +1,7 @@
+Build Docker images:
+Frontend: docker build -t front .
+Back end: docker build -t back .
+
+Start containers:
+Frontend: docker run --rm -p 5000:5000 front
+Backend: docker run --rm -v $(pwd)/logs.txt:/usr/src/app/logs.txt -p 8000:8000 back

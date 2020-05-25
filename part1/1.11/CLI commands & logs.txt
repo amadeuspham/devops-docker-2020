@@ -1,0 +1,12 @@
+hunganh@Hungs-MacBook-Pro 1.11 % docker build -t eightthousand .
+Sending build context to Docker daemon  431.1kB
+.
+.
+.
+Successfully tagged eightthousand:latest
+hunganh@Hungs-MacBook-Pro 1.11 % docker run -v $(pwd)/logs.txt:/usr/src/app/logs.txt -p 8000:8000 eightthousand
+
+> backend-example-docker@1.0.0 start /usr/src/app
+> cross-env NODE_ENV=production node index.js
+
+Started on port 8000
