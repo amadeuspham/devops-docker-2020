@@ -1,0 +1,15 @@
+# please refer to part1/1.12 for Dockerfiles of frontend and backend
+# The backend image name is "back"
+# The frontend image name is "front"
+version: '3.5' 
+
+services: 
+    backend: 
+      image: back
+      ports:
+        - 8000:8000
+
+    frontend: 
+      image: front
+      ports:
+        - 5000:5000

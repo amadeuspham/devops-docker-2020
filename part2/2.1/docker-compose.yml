@@ -1,0 +1,12 @@
+# require myLogs.txt to be already created in the host directory
+
+version: '3.5' 
+
+services: 
+
+    first-compose: 
+      image: devopsdockeruh/first_volume_exercise
+      build: . 
+      volumes: 
+        - ./myLogs.txt:/usr/app/logs.txt
+      container_name: first-compose

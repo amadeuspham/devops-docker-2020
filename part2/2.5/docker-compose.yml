@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  redis:
+      image: redis
+  backend:
+      image: back
+      ports:
+        - 8000:8000
+      environment:
+        - REDIS=redis
+  frontend:
+      image: front
+      ports:
+        - 5000:5000
