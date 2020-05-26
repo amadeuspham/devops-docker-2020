@@ -1,0 +1,3 @@
+docker build -t rails-ex .
+
+docker run -d --rm -p 3000:3000 rails-ex
