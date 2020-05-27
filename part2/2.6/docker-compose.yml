@@ -1,6 +1,8 @@
 version: '3.5'
 
 services:
+  redis:
+    image: redis
   db:
     image: postgres
     restart: unless-stopped
@@ -10,6 +12,8 @@ services:
   backend:
     image: back
     environment:
+      - REDIS=redis
+      - REDIS_PORT=6379
       - DB_USERNAME=amadeus
       - DB_PASSWORD=pass
       - DB_HOST=db

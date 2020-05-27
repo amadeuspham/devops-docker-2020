@@ -1,0 +1,32 @@
+# Nothing changed form 2.9, the trick is to add env variable 
+# API_URL=http://localhost/api to the frontend service. 
+# NO change necessary in either Dockerfile
+version: '3'
+
+services:
+    redis:
+        image: redis
+    database:
+        image: postgres
+        environment:
+            - POSTGRES_PASSWORD=pass
+            - POSTGRES_USER=amadeus
+    backend:
+        image: back
+        environment:
+            - REDIS=redis
+            - REDIS_PORT=6379
+            - DB_USERNAME=amadeus
+            - DB_PASSWORD=pass
+            - DB_HOST=database          
+        restart: unless-stopped      
+    frontend:
+        image: front
+        environment:
+            - API_URL=http://localhost/api
+    nginx:
+        image: nginx
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+        ports:
+            - 80:80
