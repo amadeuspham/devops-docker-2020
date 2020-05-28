@@ -1,0 +1,7 @@
+FROM byrnedo/alpine-curl
+
+WORKDIR /mydir 
+COPY curl_commands.sh . 
+RUN adduser -D harry && \
+    chown -R harry /mydir
+CMD ["./curl_commands.sh"]

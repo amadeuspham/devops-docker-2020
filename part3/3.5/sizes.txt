@@ -1,0 +1,5 @@
+Optimized frontend image: 301MB
+Optimized backend image: 167MB
+
+Unoptimized frontend image: 459MB
+Unoptimized backend image: 325MB

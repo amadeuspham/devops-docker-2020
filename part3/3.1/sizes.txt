@@ -1,0 +1,7 @@
+Sizes before any optimization:
+ - backend: 354MB
+ - frontend: 488MB
+
+Sizes after 3.1 optimizations:
+ - backend: 325MB
+ - frontend: 459MB
